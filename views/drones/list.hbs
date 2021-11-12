@@ -1,1 +1,19 @@
 <h2>Available drones</h2>
+{{#each drones}}
+  <h3>{{this.name}}</h3>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Propeller Count: {{this.propellers}}</li>
+    <li class="list-group-item">Max Speed: {{this.maxSpeed}}</li>
+  </ul>
+  <form action="/drones/{{this._id}}/edit" method="GET">
+    <button class="btn btn-primary" type="submit">Update</button>
+  </form>
+  <form action="/drones/{{this._id}}/delete" method="POST">
+    <button class="btn btn-danger" type="submit">Delete</button>
+  </form>
+{{/each}}
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">Propeller Count: {{this.propellers}}</li>
+  <li class="list-group-item">Max Speed: {{this.maxSpeed}}</li>
+</ul>
